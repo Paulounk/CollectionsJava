@@ -1,0 +1,37 @@
+package Listas;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+public class ListMap {
+    public static void main(String[] args) {
+
+        // Conjunto de chave e valor
+        // Não é permitido chave duplicada, mantem sempre a ultima adicionada
+        // Utiliza tabela de espalhamento - rapido
+
+        Map<String, Integer> nomesParaIdade = new HashMap<>();
+        nomesParaIdade.put("Paulo", 31);
+        nomesParaIdade.put("Adriano", 25);
+        nomesParaIdade.put("Alberto", 33);
+        nomesParaIdade.put("Guilherme", 26);
+
+        Set<String> chaves = nomesParaIdade.keySet();
+        for (String nome : chaves) {
+            System.out.println(nome);
+        }
+
+        Collection<Integer> valores = nomesParaIdade.values();
+        for (Integer idade : valores) {
+            System.out.println(idade);
+        }
+
+        Set<Map.Entry<String, Integer>> associacoes = nomesParaIdade.entrySet();
+
+        for (Map.Entry<String, Integer> associacao : associacoes) {
+            System.out.println(associacao.getKey() + " - " + associacao.getValue());
+        }
+    }
+}
